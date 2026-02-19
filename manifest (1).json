@@ -1,0 +1,18 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "tonyellw.github",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "tonyellw.github",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "display_override": [
+    "browser",
+    "fullscreen",
+    "window-controls-overlay",
+    "minimal-ui",
+    "standalone"
+  ]
+}
