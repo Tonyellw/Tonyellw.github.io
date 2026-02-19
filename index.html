@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo">SISTEMA</h1>
+            <div class="date-display" id="currentDate"></div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Daily Missions -->
+            <section class="section">
+                <h2 class="section-title">MISSÕES DIÁRIAS</h2>
+                <div class="missions-grid" id="dailyMissions">
+                    <div class="mission-card" data-mission="movimento">
+                        <div class="mission-info">
+                            <span class="mission-name">Movimento físico</span>
+                            <span class="mission-desc">mínimo 20min</span>
+                        </div>
+                        <div class="mission-controls">
+                            <button class="btn-check" data-status="complete">✔</button>
+                            <button class="btn-check" data-status="fail">✘</button>
+                        </div>
+                    </div>
+                    <div class="mission-card" data-mission="mental">
+                        <div class="mission-info">
+                            <span class="mission-name">Evolução mental</span>
+                            <span class="mission-desc">mínimo 10min</span>
+                        </div>
+                        <div class="mission-controls">
+                            <button class="btn-check" data-status="complete">✔</button>
+                            <button class="btn-check" data-status="fail">✘</button>
+                        </div>
+                    </div>
+                    <div class="mission-card" data-mission="digital">
+                        <div class="mission-info">
+                            <span class="mission-name">Autocontrole digital</span>
+                            <span class="mission-desc">sem impulsividade</span>
+                        </div>
+                        <div class="mission-controls">
+                            <button class="btn-check" data-status="complete">✔</button>
+                            <button class="btn-check" data-status="fail">✘</button>
+                        </div>
+                    </div>
+                    <div class="mission-card" data-mission="alimentar">
+                        <div class="mission-info">
+                            <span class="mission-name">Registro alimentar</span>
+                            <span class="mission-desc">consciente</span>
+                        </div>
+                        <div class="mission-controls">
+                            <button class="btn-check" data-status="complete">✔</button>
+                            <button class="btn-check" data-status="fail">✘</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rotating Missions -->
+            <section class="section">
+                <h2 class="section-title">MISSÕES ROTATIVAS <span class="cycle-indicator" id="cycleIndicator">CICLO A</span></h2>
+                <div class="missions-grid" id="rotatingMissions">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Attributes -->
+            <section class="section">
+                <h2 class="section-title">ATRIBUTOS</h2>
+                <div class="attributes-container">
+                    <div class="attribute-bar">
+                        <div class="attribute-header">
+                            <span class="attribute-name">FORÇA</span>
+                            <span class="attribute-value" id="forcaValue">0%</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-fill" id="forcaBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="attribute-bar">
+                        <div class="attribute-header">
+                            <span class="attribute-name">STAMINA</span>
+                            <span class="attribute-value" id="staminaValue">0%</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-fill" id="staminaBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="attribute-bar">
+                        <div class="attribute-header">
+                            <span class="attribute-name">DISCIPLINA</span>
+                            <span class="attribute-value" id="disciplinaValue">0%</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-fill" id="disciplinaBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                    <div class="attribute-bar">
+                        <div class="attribute-header">
+                            <span class="attribute-name">AUTOCONTROLE</span>
+                            <span class="attribute-value" id="autocontroleValue">0%</span>
+                        </div>
+                        <div class="bar-container">
+                            <div class="bar-fill" id="autocontroleBar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Weekly Progress -->
+            <section class="section">
+                <h2 class="section-title">PROGRESSÃO SEMANAL</h2>
+                <div class="weekly-stats">
+                    <div class="stat-item">
+                        <span class="stat-label">Taxa de Conclusão</span>
+                        <span class="stat-value" id="weeklyRate">0%</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Sequência Atual</span>
+                        <span class="stat-value" id="currentStreak">0 dias</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Status</span>
+                        <span class="stat-value" id="systemStatus">AGUARDANDO EXECUÇÃO</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Feedback -->
+            <div class="feedback-container" id="feedbackContainer"></div>
+        </main>
+
+        <!-- Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-btn active" data-view="main">
+                <span class="nav-icon">◆</span>
+                <span class="nav-label">Missões</span>
+            </button>
+            <button class="nav-btn" data-view="stats">
+                <span class="nav-icon">▣</span>
+                <span class="nav-label">Histórico</span>
+            </button>
+            <button class="nav-btn" data-view="config">
+                <span class="nav-icon">⚙</span>
+                <span class="nav-label">Config</span>
+            </button>
+        </nav>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
