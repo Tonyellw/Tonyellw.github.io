@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA - Guia de Instalação</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 42px;
+            letter-spacing: 6px;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #ffffff;
+            padding-bottom: 20px;
+        }
+        
+        h2 {
+            font-size: 24px;
+            letter-spacing: 3px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: #888888;
+        }
+        
+        p {
+            margin-bottom: 16px;
+            color: #cccccc;
+        }
+        
+        .step {
+            background: #151515;
+            border: 1px solid #2a2a2a;
+            padding: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            background: #ffffff;
+            color: #0a0a0a;
+            text-align: center;
+            line-height: 32px;
+            font-weight: bold;
+            margin-right: 12px;
+        }
+        
+        .step-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        code {
+            background: #1a1a1a;
+            padding: 2px 8px;
+            border: 1px solid #2a2a2a;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .code-block {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            padding: 16px;
+            margin: 16px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        
+        .warning {
+            background: rgba(255, 170, 0, 0.1);
+            border: 1px solid #ffaa00;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        
+        .info {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #2a2a2a;
+            padding: 16px;
+            margin: 20px 0;
+        }
+        
+        ul {
+            margin-left: 24px;
+            margin-bottom: 16px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            color: #cccccc;
+        }
+        
+        a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #0a0a0a;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 2px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #cccccc;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SISTEMA</h1>
+        
+        <p>Guia de instalação e uso do aplicativo de evolução pessoal.</p>
+
+        <h2>OPÇÃO 1: USO DIRETO NO NAVEGADOR</h2>
+        
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">1</span>
+                DESCOMPACTAR ARQUIVOS
+            </div>
+            <p>Extraia o arquivo <code>sistema-app.zip</code> para uma pasta no seu computador.</p>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">2</span>
+                ABRIR O APP
+            </div>
+            <p>Abra o arquivo <code>index.html</code> no seu navegador (Chrome, Firefox, Safari, Edge).</p>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">3</span>
+                COMEÇAR A USAR
+            </div>
+            <p>O app está pronto! Todos os dados são salvos localmente no seu navegador.</p>
+        </div>
+
+        <div class="info">
+            <strong>💾 DADOS LOCAIS:</strong> O app usa localStorage do navegador. Seus dados permanecem salvos mesmo fechando o navegador, mas são específicos para cada navegador/dispositivo.
+        </div>
+
+        <h2>OPÇÃO 2: CONVERTER PARA APP MOBILE</h2>
+
+        <h3 style="color: #888888; margin-top: 30px;">A. React Native (Recomendado)</h3>
+        
+        <div class="code-block">
+# Instalar Expo CLI
+npm install -g expo-cli
+
+# Criar novo projeto
+expo init SistemaApp
+
+# Copiar arquivos HTML/CSS/JS
+# Converter para componentes React Native
+
+# Testar
+expo start
+        </div>
+
+        <h3 style="color: #888888; margin-top: 30px;">B. Flutter</h3>
+        
+        <div class="code-block">
+# Criar projeto Flutter
+flutter create sistema_app
+
+# Usar WebView ou converter para widgets nativos
+# Implementar lógica em Dart
+
+# Testar
+flutter run
+        </div>
+
+        <h3 style="color: #888888; margin-top: 30px;">C. Capacitor (Mais Simples)</h3>
+        
+        <div class="code-block">
+# Instalar Capacitor
+npm install @capacitor/core @capacitor/cli
+
+# Inicializar
+npx cap init
+
+# Adicionar plataformas
+npx cap add android
+npx cap add ios
+
+# Copiar arquivos web
+npx cap copy
+
+# Abrir no Android Studio / Xcode
+npx cap open android
+npx cap open ios
+        </div>
+
+        <div class="warning">
+            <strong>⚠️ ATENÇÃO:</strong> Para converter para app mobile nativo, você precisará conhecimentos de programação. A opção mais simples é usar o Capacitor, que permite usar o código HTML/CSS/JS existente.
+        </div>
+
+        <h2>OPÇÃO 3: PWA (PROGRESSIVE WEB APP)</h2>
+
+        <p>Adicione um arquivo <code>manifest.json</code> e um <code>service-worker.js</code> para transformar o app em PWA instalável:</p>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">1</span>
+                CRIAR MANIFEST.JSON
+            </div>
+            <div class="code-block">
+{
+  "name": "SISTEMA",
+  "short_name": "SISTEMA",
+  "description": "Sistema de evolução pessoal",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0a0a0a",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">2</span>
+                ADICIONAR LINK NO HTML
+            </div>
+            <div class="code-block">
+&lt;link rel="manifest" href="manifest.json"&gt;
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">3</span>
+                HOSPEDAR ONLINE
+            </div>
+            <p>Hospede os arquivos em um servidor HTTPS (necessário para PWA):</p>
+            <ul>
+                <li><strong>Netlify:</strong> Arraste a pasta para netlify.com (gratuito)</li>
+                <li><strong>Vercel:</strong> Deploy automático com GitHub (gratuito)</li>
+                <li><strong>GitHub Pages:</strong> Hospedagem gratuita via repositório</li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <div class="step-title">
+                <span class="step-number">4</span>
+                INSTALAR NO CELULAR
+            </div>
+            <p>Acesse o site no navegador mobile e selecione "Adicionar à tela inicial".</p>
+        </div>
+
+        <h2>ESTRUTURA DE ARQUIVOS</h2>
+
+        <div class="code-block">
+sistema-app/
+├── index.html          # Interface principal
+├── styles.css          # Estilos visuais
+├── script.js           # Lógica do sistema
+├── README.md           # Documentação
+└── TECHNICAL.md        # Documentação técnica
+        </div>
+
+        <h2>FUNCIONALIDADES</h2>
+
+        <ul>
+            <li><strong>4 Missões Diárias Fixas</strong> - Movimento, Mental, Digital, Alimentar</li>
+            <li><strong>Missões Rotativas</strong> - Ciclos A, B, C alternando a cada 3 dias</li>
+            <li><strong>4 Atributos</strong> - Força, Stamina, Disciplina, Autocontrole</li>
+            <li><strong>Sistema de Progressão</strong> - Baseado em consistência e execução</li>
+            <li><strong>Penalidades</strong> - Congelamento por 48h após falhas consecutivas</li>
+            <li><strong>Persistência Local</strong> - Dados salvos automaticamente</li>
+        </ul>
+
+        <h2>SUPORTE</h2>
+
+        <p>O app foi desenvolvido com tecnologias web padrão e funciona em:</p>
+        <ul>
+            <li>Chrome/Edge 90+</li>
+            <li>Firefox 88+</li>
+            <li>Safari 14+</li>
+            <li>Navegadores mobile modernos</li>
+        </ul>
+
+        <div class="info">
+            <strong>📱 RECOMENDAÇÃO:</strong> Para melhor experiência mobile, converta para PWA ou app nativo usando as instruções acima.
+        </div>
+
+        <h2>FILOSOFIA</h2>
+
+        <blockquote style="border-left: 4px solid #ffffff; padding-left: 20px; margin: 30px 0; font-style: italic; color: #888888;">
+            Disciplina antes de motivação.<br>
+            Identidade antes de resultado.<br>
+            Execução antes de emoção.
+        </blockquote>
+
+        <a href="index.html" class="btn">ABRIR SISTEMA</a>
+    </div>
+</body>
+</html>
